@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Frosted Glass Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
+
+/* Shows the active page smoothly */
+.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Hides the inactive pages */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Floating Animation for Images */
+.floating {
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.yes {
+    background-color: #ff4757;
+    color: white;
+}
+
+.yes:hover {
+    background-color: #ff6b81;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
+}
+
+.no {
+    background-color: white;
+    color: #ff4757;
+}
+
+.no:hover {
+    background-color: #f1f2f6;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Container specifically for the runaway button */
+.button-container {
+    position: relative;
+    height: 60px;
+}
